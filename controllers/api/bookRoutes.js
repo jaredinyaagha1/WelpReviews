@@ -4,7 +4,7 @@ const axios = require("axios");
 // GET all users
 router.get("/:id", async (req, res) => {
   try {
-    let url = `https://www.googleapis.com/books/v1/volumes/${req.params.id}&key=${ApiKey}`;
+    let url = `https://www.googleapis.com/books/v1/volumes/${req.params.id}`;
     const resp = await axios.get(url);
     res.status(200).json(resp.data);
   } catch (error) {
