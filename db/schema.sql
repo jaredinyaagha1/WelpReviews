@@ -1,4 +1,2 @@
 DROP DATABASE IF EXISTS welp_db;
 CREATE DATABASE welp_db;
-
-USE welp_db;
