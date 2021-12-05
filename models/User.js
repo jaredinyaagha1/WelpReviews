@@ -6,6 +6,10 @@ class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
+  static async checkIfExists(email) {
+    let currentUser = await this.findOne({ where: { email: email } });
+    return currentUser;
+  }
 }
 
 User.init(

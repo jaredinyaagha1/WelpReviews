@@ -14,7 +14,8 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert("Failed to log in");
+      let message = await response.json();
+      alert(message.message);
     }
   }
 };
@@ -35,7 +36,14 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert("Failed to register");
+      let message = await response.json();
+      if (message) {
+        if (message.message === "email") {
+          alert("Invalid email. Please correct and try again.");
+        } else if (message.message === "alreadyExists") {
+          alert("Email already registered. Please try again.");
+        }
+      }
     }
   }
 };
