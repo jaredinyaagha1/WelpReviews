@@ -2,10 +2,16 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 const { User } = require("../models");
 const withAuth = require("../utils/auth");
+const searchRoutes = require("./searchRoutes");
 
+router.use("/search", searchRoutes);
 router.use("/api", apiRoutes);
 
 router.get("/", async (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("profile");
+    return;
+  }
   res.render("login");
 });
 

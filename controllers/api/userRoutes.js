@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const { ValidationError } = require("sequelize");
 
 router.post("/login", async (req, res) => {
   try {
@@ -24,8 +25,9 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
-      res.json({ user: userData, message: "You are now logged in!" });
+      res
+        .status(200)
+        .json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
     res.status(400).json(err);
@@ -45,10 +47,25 @@ router.post("/logout", (req, res) => {
 router.post("/register", async (req, res) => {
   try {
     const newUser = req.body;
-    const userData = await User.create(newUser);
-    res.status(200).json(userData);
+    console.log(newUser);
+    try {
+      const currentUser = await User.checkIfExists(newUser.email);
+      if (currentUser != null) {
+        res.status(400).json({ message: "alreadyExists" });
+        return;
+      }
+      const userData = await User.create(newUser);
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+        res.status(200).json({ message: "You are now logged in!" });
+      });
+    } catch (err) {
+      if (err instanceof ValidationError) {
+        res.status(400).json({ message: err.errors[0].path });
+      }
+    }
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
