@@ -1,0 +1,19 @@
+  {{#if results.length}}
+  <div class="col-md-6">
+    <h3>Search Results:</h3>
+
+    {{#each results as |result|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h3>Title: {{result.volumeInfo.title}}</h3>
+        <h4>Authors: {{result.volumeInfo.authors}}</h4>
+        <h4>Published: {{result.volumeInfo.publishedDate}}</h4>
+        <h4>Rating: {{result.volumeInfo.averageRating}}</h4>
+        <h4>Total Ratings: {{result.volumeInfo.ratingsCount}}</h4>
+        <img src="{{result.volumeInfo.imageLinks.smallThumbnail}}" alt="image">
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
