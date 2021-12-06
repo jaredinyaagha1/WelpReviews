@@ -1,44 +1,134 @@
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fund My Project!</title>
-    {{! <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css"> }}
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund My Project!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+    {{!-- <header class="nav-container">
+      <div class="nav-logo"><img id="logo" src="./images/welpLogoB.png" style="height: 80px; width:220px;"></div>
+      <div class="nav-links">
+          <a href="">Home</a>
+          <a href="">Categories</a>
+          <a href="">Book Rankings</a>
+          <a href="">My Reviews</a>
+      </div>
+    </header> --}}
+{{!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --}}
 
-  <body>
-    <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
-        <h1>
-          <span role="img" aria-label="money">💸</span>
-          <a href="/">Fund My Project!</a>
-        </h1>
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <a href="/profile">profile</a>
-            |
-            <button class="no-button" id="logout">logout</button>
-          {{else}}
-            <a href="/login">login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main class="container container-fluid mt-5">
+
+<body class="d-flex flex-column h-100">
+
+
+    
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Welp Reviews</a>
+        
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Browse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">MyReviews</a>
+          </li>
+        </ul>
+
+        <div class="nav-logo"><img id="logo" src="./images/welpLogoB.png" style="height: 80px; width:220px;"></div>
+
+        <form class="d-flex nav-search">
+          <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">Display Notes</h1>
+    <p class="lead"> Content should  <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
+    <p>Back to <a href="/docs/5.0/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
+  </div>
+</main>
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+{{!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --}}
+
+      <div class="main-container">
         <!-- Render the sub layout -->
         {{{body}}}
-      </main>
-      <footer>
+      </div>
 
-      </footer>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Place sticky footer content here.</span>
     </div>
+  </footer>
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
+
+</body>
 
 </html>
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum</title>
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to the Four Seasons Museum</h1>
+  </header>
+  <nav>
+    <div class="car"></div>
+    <a href="/">Home</a>
+    <!-- If the user is logged in, show a logout button -->
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <!-- Otherwise, show a link to login -->
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+  <main>
+    <aside>
+      <h2>Enjoy the galleries!</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+  <!-- If the user is logged in, load the JS script for when they logout -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html> --}}
