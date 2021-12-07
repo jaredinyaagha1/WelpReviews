@@ -1,16 +1,16 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector("#project-name").value.trim();
-  const needed_funding = document
-    .querySelector("#project-funding")
+  const bookName = document.querySelector("#book-name").value.trim();
+  const starRating = document
+    .querySelector("#star-rating")
     .value.trim();
-  const description = document.querySelector("#project-desc").value.trim();
+  const bookReview = document.querySelector("#book-review").value.trim();
 
-  if (name && needed_funding && description) {
+  if (bookName && starRating && bookReview) {
     const response = await fetch(`/api/projects`, {
       method: "POST",
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ bookName, starRating, bookReview }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -19,7 +19,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert("Failed to create project");
+      alert("Failed to create review");
     }
   }
 };
@@ -35,7 +35,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert("Failed to delete project");
+      alert("Failed to delete review");
     }
   }
 };
