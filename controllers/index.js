@@ -6,7 +6,7 @@ const withAuth = require("../utils/auth");
 router.use("/api", apiRoutes);
 
 router.get("/", async (req, res) => {
-  res.render("login");
+  res.render("home");
 });
 
 router.get("/profile", withAuth, async (req, res) => {
