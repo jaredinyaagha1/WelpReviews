@@ -19,5 +19,6 @@
     "handlebars": "^4.7.3",
     "mysql2": "^2.1.0",
     "sequelize": "^6.11.0"
+    
   }
 }

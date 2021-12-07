@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+* {
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    /* background-image: url(/assets/images/landscape-1844229.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    overflow-x: hidden;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-container {
+    padding: 20px 70px;
+    color: #fff;
+    height: fit-content;
+}
+
+.nav-logo img {
+    display: flex;
+    padding: auto;
+    max-width: 90px;
+}
+
+.nav-links {
+    padding: 8px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-evenly;
+    background-color: rgb(24, 66, 180);
+}
+
+.nav-item {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.nav-links a {
+    color: white;
+}
+
+form, .nav-search {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-bar {
+    width: 300px;
+}
+
+.user-icon {
+    margin-left: 15px;
+    color: white;
+    font-size: 40px;
+    padding: 0;
+}
+
+.options-icon {
+    margin-left: 15px;
+    color: white;
+    font-size: 40px;
+    padding: 0;
+}
+
+.main-container {
+    flex: 4;
+    /* background-color: rgb(167, 101, 101); */
+    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-img {
+      margin: 0 auto;
+      display: inline-block;
+  }
+
+  .home-content {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
