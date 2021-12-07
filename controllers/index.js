@@ -8,6 +8,10 @@ router.use("/api", apiRoutes);
 router.get("/", async (req, res) => {
   res.render("home");
 });
+router.get("/", async (req, res) => {
+  res.render("login");
+});
+
 
 router.get("/profile", withAuth, async (req, res) => {
   try {
@@ -33,5 +37,6 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
+
 
 module.exports = router;
