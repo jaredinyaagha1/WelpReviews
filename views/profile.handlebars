@@ -31,40 +31,41 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Review:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-review-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
+        <label for="book-name">Book Name:</label>
         <input
           class="form-input"
           type="text"
-          id="project-name"
-          name="project-name"
+          id="book-name"
+          name="book-name"
         />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
+        <label for="star-rating">Star Rating:</label>
         <input
           class="form-input"
           type="number"
-          id="project-funding"
-          name="project-funding"
+          id="star-rating"
+          name="star-rating"
         />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
+        <label for="book-review">Comments:</label>
         <textarea
           class="form-input"
-          id="project-desc"
-          name="project-desc"
+          id="book-review"
+          name="book-review"
         ></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
       </div>
     </form>
   </div>
+
 
   {{!-- {{#if projects.length}}
   <div class="col-md-6 project-list">
