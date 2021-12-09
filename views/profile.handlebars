@@ -1,27 +1,26 @@
-<div class="input-group mb-3">
-  <div class="input-group-text p-0">
-    <select
-      id="search-category"
-      class="form-select form-select-lg shadow-none bg-light border-0"
-    >
-      <option>All</option>
-      <option>Title</option>
-      <option>Author</option>
-      <option>Subject</option>
-    </select>
-  </div>
-  <input
-    id="search-bar"
-    type="text"
-    class="form-control"
-    placeholder="Search Here"
-  />
-  <button
-    id="search-button"
-    class="input-group-text shadow-none px-4 btn-primary"
-  >Search
-  </button>
-</div>
+
+<div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          {{!-- Profile Banner --}}
+          <div class="profile-banner">
+            <div class="user-profile-pic"></div>
+            <a class="edit-profile" style="font-weight: bold;"> Edit Profile</a>
+          </div>
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">User Name</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">Reviewer Ranking: #983293</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>User Data slot 1</li>
+              <li>User Data slot 2</li>
+              <li>User Data slot 3</li>
+              <li>User Data slot 4</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary">Review Archive</button>
+          </div>
+        </div>
+      </div>
 
 <div class="row">
   <div class="col-auto">
@@ -29,60 +28,23 @@
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+<h1>My Latest Reviews</h1>
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <h3 class="mb-0"></h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input
-          class="form-input"
-          type="text"
-          id="project-name"
-          name="project-name"
-        />
-      </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input
-          class="form-input"
-          type="number"
-          id="project-funding"
-          name="project-funding"
-        />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea
-          class="form-input"
-          id="project-desc"
-          name="project-desc"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{!-- {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        </div>
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}} --}}
-</div>
 
 <script src="./js/profile.js"></script>
 <script src="./js/search.js"></script>

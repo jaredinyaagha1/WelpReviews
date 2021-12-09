@@ -69,6 +69,21 @@ form,
   padding: 0;
 }
 
+.card-deck {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-auto-rows: auto;
+
+  grid-gap: 3rem;
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+}
+
 .main-container {
   flex: 4;
   /* background-color: rgb(167, 101, 101); */
@@ -90,17 +105,62 @@ form,
   justify-content: center;
 }
 
-.card-deck {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  grid-auto-rows: auto;
-
-  grid-gap: 3rem;
+.sign-in-box {
+  margin: 0 auto;
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: center;
 }
 
-.card-img-top {
-  max-width: 100%;
-  height: auto;
+.login-logo img {
+  display: flex;
+  justify-content: center;
+  padding: auto;
+  max-width: 50px;
+  border: red solid 5px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* MY REVIEWS */
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: tomato solid 6px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* PROFILE */
+
+.profile-banner {
+  background-image: url(/images/reading01.jpg);
+  background-size: cover;
+  border: tomato solid 6px;
+}
+
+.user-profile-pic {
+  background-image: url(/images/welpLogoRed.png);
+  border: tomato solid 6px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* HOME */
+
+.banner {
+  background-position: center;
+  background-size: cover;
+}
+
+.source {
+  color: wheat;
+}
+.source a {
+  color: wheat;
 }
