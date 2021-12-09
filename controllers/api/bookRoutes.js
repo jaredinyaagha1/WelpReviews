@@ -1,6 +1,37 @@
 const router = require("express").Router();
 const axios = require("axios");
 const helpers = require("../../utils/helpers");
+const auth = require("../../utils/auth");
+const { User, Book } = require("../../models");
+
+router.post("/", auth.withAuthAdd, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    }); // Fetches the current user that is logged in, as a database object
+    let rating = req.body.rating || null;
+    let totalRatings = req.body.totalRatings || null;
+    let thumbnail = req.body.thumbnail || null;
+    let book = await Book.findOne({ where: { google_id: req.body.googleId } });
+    if (book === null) {
+      book = await Book.create({
+        google_id: req.body.googleId,
+        title: req.body.title,
+        author: req.body.author,
+        rating: rating,
+        total_ratings: totalRatings,
+        thumbnail: thumbnail,
+      });
+    }
+    userData.addBooks([book], {
+      through: { reading_status: req.body.readingStatus },
+    });
+    res.status(201).json(book);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 router.get("/author", async (req, res) => {
   try {
@@ -13,7 +44,6 @@ router.get("/author", async (req, res) => {
   }
 });
 
-// GET all users
 router.get("/:id", async (req, res) => {
   try {
     let url = `https://www.googleapis.com/books/v1/volumes/${req.params.id}`;
@@ -24,7 +54,5 @@ router.get("/:id", async (req, res) => {
     res.status(500).json("request failed");
   }
 });
-
-
 
 module.exports = router;

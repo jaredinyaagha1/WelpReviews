@@ -10,7 +10,7 @@ const searchBarHandler = async (event) => {
   if (query) {
     let searchPage = `/search?q=${query}`;
     if (category != "all") {
-      searchPage = `/search/${category}?q=${query}`;
+      searchPage = `/search?category=${category}&q=${query}`;
     }
     document.location = searchPage;
   }
