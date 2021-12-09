@@ -107,7 +107,7 @@ form, .nav-search {
 }
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-/* PROFILE */
+/* MY REVIEWS */
 
 .form-group {
     display: flex;
@@ -116,6 +116,24 @@ form, .nav-search {
     flex-direction: column;
     border:tomato solid 6px;
 }
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* PROFILE */
+
+.profile-banner {
+    background-image: url(/images/reading01.jpg);
+    background-size: cover;
+    border:tomato solid 6px;
+}
+
+.user-profile-pic {
+    background-image: url(/images/welpLogoRed.png);
+    border:tomato solid 6px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
 
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
