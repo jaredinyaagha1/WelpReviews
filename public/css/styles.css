@@ -88,3 +88,49 @@ form, .nav-search {
     display: flex;
     justify-content: center;
   }
+
+.sign-in-box{
+    margin: 0 auto;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: center;
+}
+
+.login-logo img {
+    display: flex;
+    justify-content: center;
+    padding: auto;
+    max-width: 50px;
+    border: red solid 5px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* PROFILE */
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    border:tomato solid 6px;
+}
+
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* HOME */
+
+.banner {
+    background-position: center;
+    background-size: cover;
+}
+
+.source {
+    color: wheat;
+}
+.source a {
+    color: wheat;
+}
+
+
