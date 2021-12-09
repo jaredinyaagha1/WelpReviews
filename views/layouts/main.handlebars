@@ -1,6 +1,4 @@
 {{!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --}}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +11,6 @@
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
-
 <body class="d-flex flex-column h-100">
 
 <header>
@@ -31,7 +28,7 @@
         
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Browse</a>
@@ -41,13 +38,21 @@
           </li>
         </ul>
 
-        
+      <form class="d-flex nav-search">
+        <div class="input-group-text p-0">
+          <select id="search-category" class="form-select form-select-lg shadow-none bg-light border-0">
+            <option>All</option>
+            <option>Title</option>
+            <option>Author</option>
+            <option>Subject</option>
+          </select>
+        </div>
+          <input id="search-bar" class="form-control me-2 search-bar" type="text" placeholder="Search Here" aria-label="Search">
+            <button id="search-button" class="input-group-text shadow-none px-4 btn-primary" type="submit">Search</button> 
+              <a href="/profile"><i class="uil uil-user-circle user-icon"></i></a>
+                <i class="uil uil-ellipsis-v options-icon"></i>
+      </form>
 
-        <form class="d-flex nav-search">
-          <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button> <i class="uil uil-user-circle user-icon"></i>
-          <i class="uil uil-ellipsis-v options-icon"></i>
-        </form>
     </div>
     </div>
   </nav>

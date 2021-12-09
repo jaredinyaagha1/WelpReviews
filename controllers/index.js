@@ -8,10 +8,6 @@ router.use("/search", searchRoutes);
 router.use("/api", apiRoutes);
 
 router.get("/", async (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("profile");
-    return;
-  }
   res.render("login");
 });
 
@@ -34,10 +30,34 @@ router.get("/profile", withAuth, async (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("profile");
+    res.redirect("/login");
     return;
   }
-  res.render("login");
+  res.render("/");
 });
+
+// Login route
+router.get('/home', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('home');
+});
+
+
+// Login route
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('signup');
+});
+
 
 module.exports = router;
