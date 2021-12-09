@@ -14,6 +14,7 @@
           <li class="list-group-item"><strong>Published</strong>: {{result.volumeInfo.publishedDate}}</li>
           <li class="list-group-item"><strong>Rating</strong>: {{result.volumeInfo.averageRating}}</li>
           <li class="list-group-item"><strong>Ratings: </strong>{{result.volumeInfo.ratingsCount}}</li>
+          <li class="list-group-item" hidden>{{result.id}}</li>
         </ul>
         <div class="card-body">
           <h4>Add to Reading Lists:</h4>
@@ -28,4 +29,4 @@
   {{/if}}
 </div>
 
-<script src="./js/searchResults.js"></script>
+<script src="../js/searchResults.js"></script>

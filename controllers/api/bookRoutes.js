@@ -12,9 +12,10 @@ router.post("/", auth.withAuthAdd, async (req, res) => {
     let rating = req.body.rating || null;
     let totalRatings = req.body.totalRatings || null;
     let thumbnail = req.body.thumbnail || null;
-    let book = await Book.findOne({ where: { title: req.body.title } });
+    let book = await Book.findOne({ where: { google_id: req.body.googleId } });
     if (book === null) {
       book = await Book.create({
+        google_id: req.body.googleId,
         title: req.body.title,
         author: req.body.author,
         rating: rating,
@@ -53,7 +54,5 @@ router.get("/:id", async (req, res) => {
     res.status(500).json("request failed");
   }
 });
-
-
 
 module.exports = router;

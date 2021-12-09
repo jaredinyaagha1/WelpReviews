@@ -12,10 +12,12 @@ let buttonHandler = async (event) => {
   let author = attrList[0].textContent.split(":")[1].trim();
   let rating = attrList[2].textContent.split(":")[1].trim();
   let totalRatings = attrList[3].textContent.split(":")[1].trim();
+  let googleId = attrList[4].textContent.trim();
 
   const response = await fetch("/api/books", {
     method: "POST",
     body: JSON.stringify({
+      googleId,
       title,
       author,
       rating,

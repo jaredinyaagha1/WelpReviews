@@ -11,14 +11,18 @@ Book.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    google_id: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     author: {
       type: DataTypes.STRING,
-      allowNull: null,
+      allowNull: false,
     },
     rating: {
       type: DataTypes.INTEGER,
