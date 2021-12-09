@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const apiRoutes = require("./api");
 const { User } = require("../models");
-const withAuth = require("../utils/auth");
+const auth = require("../utils/auth");
 const searchRoutes = require("./searchRoutes");
 
 router.use("/search", searchRoutes);
@@ -15,16 +15,14 @@ router.get("/", async (req, res) => {
   res.render("login");
 });
 
-router.get("/profile", withAuth, async (req, res) => {
+router.get("/profile", auth.withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-    });
-
-    const users = userData.map((project) => project.get({ plain: true }));
-
+    }); // Fetches the current user that is logged in, as a database object
+    const user = userData.get({ plain: true }); // Converts database object into plain object
     res.render("profile", {
-      users,
+      ...user, // Spreads the user object into multiple variables (id and email)
       logged_in: req.session.logged_in,
     });
   } catch (err) {

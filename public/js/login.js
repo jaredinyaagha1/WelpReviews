@@ -11,6 +11,7 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
+    // response.status === 200
     if (response.ok) {
       document.location.replace("/profile");
     } else {

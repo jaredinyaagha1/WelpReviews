@@ -1,15 +1,33 @@
 const User = require("./User");
 const Book = require("./Book");
 const Review = require("./Review");
+const sequelize = require("../config/connection");
+const { DataTypes } = require("sequelize");
+
+UserBook = sequelize.define("user_book", {
+  reading_status: DataTypes.STRING,
+});
 
 User.hasMany(Review, {
-    foreignKey: 'user_id',
-    name: 'userReviews',
-    onDelete: 'CASCADE'
+  foreignKey: "user_id",
+  name: "userReviews",
+  onDelete: "CASCADE",
 });
 
 Review.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
-module.exports = { User, Review };
+User.belongsToMany(Book, {
+  through: UserBook,
+});
+
+Book.belongsToMany(User, {
+  through: UserBook,
+});
+
+module.exports = {
+  User,
+  Book,
+  Review,
+};
