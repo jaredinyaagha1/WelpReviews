@@ -1,0 +1,28 @@
+  {{#if books.length}}
+  <div class="col-md-6">
+    <h3>Topic</h3>
+
+    <div class="card-deck">
+      {{#each books as |book|}}
+      <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src="{{book.thumbnail}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{book.title}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Authors</strong>: {{book.author}}</li>
+          <li class="list-group-item"><strong>Rating</strong>: {{book.rating}}</li>
+          <li class="list-group-item"><strong>Ratings: </strong>{{book.total_ratings}}</li>
+        </ul>
+        <div class="card-body">
+          <button type="button" class="btn btn-warning">Leave a Review</button>
+          <button type="button" class="btn btn-warning">Remove From List</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/searchResults.js"></script>

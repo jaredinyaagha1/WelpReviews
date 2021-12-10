@@ -35,27 +35,73 @@ router.get("/login", (req, res) => {
 });
 
 // Login route
-router.get('/home', (req, res) => {
+router.get("/home", (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
   // Otherwise, render the 'login' template
-  res.render('home');
+  res.render("home");
 });
-
 
 // Login route
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
   // Otherwise, render the 'login' template
-  res.render('signup');
+  res.render("signup");
 });
 
+router.get("/have-read", auth.withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+    let bookData = await userData.getBooks({
+      through: { where: { reading_status: "Have Read" } },
+    });
+    let books = bookData.map((book) => book.get({ plain: true }));
+    res.render("books", { books });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("request failed");
+  }
+});
+
+router.get("/currently-reading", auth.withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+    let bookData = await userData.getBooks({
+      through: { where: { reading_status: "Reading" } },
+    });
+    let books = bookData.map((book) => book.get({ plain: true }));
+    res.render("books", { books });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("request failed");
+  }
+});
+
+router.get("/want-to-read", auth.withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+    let bookData = await userData.getBooks({
+      through: { where: { reading_status: "Want To Read" } },
+    });
+    let books = bookData.map((book) => book.get({ plain: true }));
+    res.render("books", { books });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("request failed");
+  }
+});
 
 module.exports = router;
