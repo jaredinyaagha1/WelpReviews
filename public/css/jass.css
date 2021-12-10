@@ -1073,9 +1073,27 @@ html {
     background-color: #31a9e1;
   }
   
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* API CARDS */
+
+  .card-container {
+    margin: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border: red solid 5px;
+    width: max-content;
+  }
+
   .card {
-    border: 1px solid #1a1a1a;
     margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+    0 0  0 2px rgb(255,255,255),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);
   }
   
   .card .card-header {
@@ -1084,6 +1102,15 @@ html {
     color: #d9e9e8;
   }
   
+.card h5 {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 25px;
+}
+
   .card .card-body {
     padding: 0.375rem;
   }
@@ -1100,7 +1127,38 @@ html {
   .card.card-rounded .card-header {
     border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
   }
+
+  .card img {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    height: 300px;
+    width: 200px;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
+    border:rgb(0, 0, 0) 2px;
+  }
+
+  .haveRead-btn {
+    box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
+    margin: 5px;
+  }
   
+  .reading-btn {
+    box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
+    margin: 5px;
+    width: max-content;
+  }
+
+  .wantToRead-btn {
+    box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
+    margin: 5px;
+  }
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* FORMS */
+
   form {
     width: 100%;
   }
@@ -1158,14 +1216,13 @@ html {
   }
   
   .container {
-    width: 85%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 1200vw;
+ 
   }
   
   .container.container-fluid {
-    width: 92%;
+    width: 100%;
   }
   
   /* FLEX CONTENT */
