@@ -1,28 +1,26 @@
 
-<div class="container">
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">#Fiction</a>
-      <a class="p-2 link-secondary" href="#">#Non-Fiction</a>
-      <a class="p-2 link-secondary" href="#">#Biographies</a>
-      <a class="p-2 link-secondary" href="#">#Children</a>
-      <a class="p-2 link-secondary" href="#">#SelfHelp</a>
-      <a class="p-2 link-secondary" href="#">#Business</a>
-      <a class="p-2 link-secondary" href="#">#Cooking</a>
-      <a class="p-2 link-secondary" href="#">#SciFi</a>
-      <a class="p-2 link-secondary" href="#">#Health</a>
-      <a class="p-2 link-secondary" href="#">Comics</a>
-    </nav>
-  </div>
-</div>
+      <div class="tag-scroller">
+        <nav class="tag-bar">
+          <a class="tag-words p-2 link-secondary" href="#">#Fiction</a>
+          <a class="tag-words p-2 link-secondary" href="#">#Non-Fiction</a>
+          <a class="tag-words p-2 link-secondary" href="#">#Biographies</a>
+          <a class="tag-words p-2 link-secondary" href="#">#Children</a>
+          <a class="tag-words p-2 link-secondary" href="#">#SelfHelp</a>
+          <a class="tag-words p-2 link-secondary" href="#">#Business</a>
+          <a class="tag-words p-2 link-secondary" href="#">#Cooking</a>
+          <a class="tag-words p-2 link-secondary" href="#">#SciFi</a>
+          <a class="tag-words p-2 link-secondary" href="#">#Health</a>
+          <a class="tag-words p-2 link-secondary" href="#">Comics</a>
+        </nav>
+      </div>
 
 {{!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --}}
 {{!-- Home Banner --}}
 
 <main class="home-container">
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark home-banner" style="background-image: url(/images/reading02.jpg);">
-    <div class="col-md-6 px-0 text-box">
+  <div class="home-banner" style="background-image: url(/images/reading02.jpg);">
+    <div class="col-md-4 px-1 text-box">
       <h1 class="display-4 fst-italic">Looking for that Special book for the holiday?</h1>
       <p class="lead my-3">Here at Welp, we have hundreds of holiday book titles for you to choose from. Simply search for the title you are looking for and read the community reviews to better help you make your descision on your book selection.</p>
       <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
@@ -32,62 +30,105 @@
   {{!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --}}
   {{!-- Book Cards --}}
 
-{{#each books as |book|}}
-  <div class="row mb-2">
-    <div class="col-md-6">
+
+ <div class="row mb-2 book-cards">
+     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">{{book.title}}</strong>
-          <h3 class="mb-0"></h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+          <strong class="d-inline-block mb-2 text-success">Pat Sloan</strong>
+          <h3 class="mb-0">Pat Sloan's Holiday Celebrations</h3>
+          <div class="mb-1 text-muted">Tags: #holiday</div>
+          <p class="card-text mb-auto" style="font-size: 15px; color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu dui eu turpis mattis mollis et vel nunc. Fusce placerat dignissim dolor, eget congue neque. Nulla molestie tempor sapien quis condimentum. Nullam quam mi, lacinia at pharetra et, aliquet nec nibh. Suspendisse varius ornare nisl nec consequat.</p>          <a href="#" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+          <img class="bd-placeholder-img" width="200" height="250" src="http://books.google.com/books/content?id=YecsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"/>
+          <br>
+          <button type="button" class="btn btn-danger haveRead-btn" style="width: 190px;">View Book</button>
         </div>
       </div>
     </div>
-{{/each}}
-
-      <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0"></h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <strong class="d-inline-block mb-2 text-success">Bill McKibben</strong>
+          <h3 class="mb-0">Hundred Holidays</h3>
+          <div class="mb-1 text-muted">Tags: #holiday #romance</div>
+            <p class="card-text mb-auto" style="font-size: 15px; color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu dui eu turpis mattis mollis et vel nunc. Fusce placerat dignissim dolor, eget congue neque. Nulla molestie tempor sapien quis condimentum. Nullam quam mi, lacinia at pharetra et, aliquet nec nibh. Suspendisse varius ornare nisl nec consequat.</p>
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+          <img class="bd-placeholder-img" width="200" height="250" src="http://books.google.com/books/content?id=fL1wnAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"/>
+                    <br>
+          <button type="button" class="btn btn-danger haveRead-btn" style="width: 190px;">View Book</button>
         </div>
       </div>
     </div>
 
-
-  {{!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --}}
-
-  
-        <div class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
-          </ol>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Patricia Kamara</strong>
+          <h3 class="mb-0">The Ultimate Family Favorites Holiday Cookbook</h3>
+          <div class="mb-1 text-muted">Tags: #holiday</div>
+          <p class="card-text mb-auto" style="font-size: 15px; color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu dui eu turpis mattis mollis et vel nunc. Fusce placerat dignissim dolor, eget congue neque. Nulla molestie tempor sapien quis condimentum. Nullam quam mi, lacinia at pharetra et, aliquet nec nibh. Suspendisse varius ornare nisl nec consequat.</p>          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="http://books.google.com/books/content?id=oDlTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"/>
+          <br>
+          <button type="button" class="btn btn-danger haveRead-btn" style="width: 190px;">View Book</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Melody Grace</strong>
+          <h3 class="mb-0">Holiday Kisses</h3>
+          <div class="mb-1 text-muted">Tags: #holiday</div>
+          <p class="card-text mb-auto" style="font-size: 15px; color:white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu dui eu turpis mattis mollis et vel nunc. Fusce placerat dignissim dolor, eget congue neque. Nulla molestie tempor sapien quis condimentum. Nullam quam mi, lacinia at pharetra et, aliquet nec nibh. Suspendisse varius ornare nisl nec consequat.</p>          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="http://books.google.com/books/content?id=kW48DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"/>
+          <br>
+          <button type="button" class="btn btn-danger haveRead-btn" style="width: 190px;">View Book</button>
         </div>
       </div>
     </div>
   </div>
+  
+<br>
+<br>
 
+<div class="sale-container">
+    <div class="spacer">
+      <div class="rspace2">
+        <div class="col d-flex flex-column">
+          <strong class="d-inline-block mb-2 text-success" style="margin: 20px;">Limited Time Offer</strong>
+          <h3 class="mb-0">Holiday Books on Sale</h3>
+          <div class="mb-1 text-muted" style="margin-left: 40px;">Expires 01/06/2022</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu dui eu turpis mattis mollis et vel nunc. Nulla molestie tempor sapien quis condimentum. Suspendisse varius ornare nisl nec consequat.</p>          
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="800" height="450" src="images/sale01.jpg"/>
+          <br>
+          <button type="button" class="btn btn-success" style="width: 250px; margin-left: 400px; margin-bottom: 20px;">Click Here</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <footer class="main-footer">
+      <div class="footer-position">
+        <h4 class="fst-italic">Contact us</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ol>
+          
+      </div>
+  </footer>
+
+<br>
 </main>
 
-<footer class="blog-footer source">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-</footer>
-
-<a href="#">Back to top</a>
