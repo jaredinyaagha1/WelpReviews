@@ -10,7 +10,6 @@ UserBook = sequelize.define("user_book", {
 
 User.hasMany(Review, {
   foreignKey: "user_id",
-  name: "userReviews",
   onDelete: "CASCADE",
 });
 

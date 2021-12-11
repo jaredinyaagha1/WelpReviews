@@ -4,7 +4,15 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sequelize = require("./config/connection");
 const path = require("path");
-const hbs = exphbs.create({});
+const hbs = exphbs.create({
+  helpers: {
+    section: function (name, options) {
+      if (!this._sections) this._sections = {};
+      this._sections[name] = options.fn(this);
+      return null;
+    },
+  },
+});
 const routes = require("./controllers");
 
 // Sets up the Express App

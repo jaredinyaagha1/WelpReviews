@@ -15,8 +15,8 @@
           <li class="list-group-item"><strong>Ratings: </strong>{{book.total_ratings}}</li>
         </ul>
         <div class="card-body">
-          <button type="button" class="btn btn-warning">Leave a Review</button>
-          <button type="button" class="btn btn-warning">Remove From List</button>
+          <button type="button" class="btn-success btn">Leave a Review</button>
+          <button type="button" class="btn-danger btn">Remove From List</button>
         </div>
       </div>
       {{/each}}
@@ -25,4 +25,9 @@
   {{/if}}
 </div>
 
-<script src="./js/searchResults.js"></script>
+{{#section 'script'}}
+
+    <script src="./js/books.js"></script>
+
+
+{{/section}}

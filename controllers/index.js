@@ -104,4 +104,76 @@ router.get("/want-to-read", auth.withAuth, async (req, res) => {
   }
 });
 
+
+
+
+
+// Get all dishes
+router.get('/', (req, res) => {
+  res.render('home');
+});
+
+// TODO: Add a route called `/dish/:num` below
+router.get('/books/title', (req, res) => {
+  return res.render('books', {dishes});
+});
+
+
+
+
+
+
+// // Login route
+// router.get('/home', (req, res) => {
+//   // If the user is already logged in, redirect to the homepage
+//   if (req.session.loggedIn) {
+//     res.redirect('/home');
+//     return;
+//   }
+  
+//   res.render('home', { books: [
+//     {
+//       title: "The Martian",
+//       author: "The Martian",
+//       description: "The Martian",
+//       rating: "The Martian",
+//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//     },
+//     {
+//       title: "The Martian",
+//       author: "The Martian",
+//       description: "The Martian",
+//       rating: "The Martian",
+//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//     }
+//   ]});
+// });
+
+
+// // Login route
+// router.get('/home', (req, res) => {
+//   // If the user is already logged in, redirect to the homepage
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
+  
+//   res.render('home', { books: [
+//     {
+//       title: "The Martian",
+//       author: "The Martian",
+//       description: "The Martian",
+//       rating: "The Martian",
+//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//     },
+//     {
+//       title: "The Martian",
+//       author: "The Martian",
+//       description: "The Martian",
+//       rating: "The Martian",
+//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+//     }
+//   ]});
+// });
+
 module.exports = router;
