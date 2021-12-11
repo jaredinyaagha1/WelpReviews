@@ -3,6 +3,7 @@ const apiRoutes = require("./api");
 const { User } = require("../models");
 const auth = require("../utils/auth");
 const searchRoutes = require("./searchRoutes");
+const moment = require("moment");
 
 router.use("/search", searchRoutes);
 router.use("/api", apiRoutes);
@@ -115,16 +116,26 @@ router.get("/browse", (req, res) => {
   res.render("browse");
 });
 
-// My Reviews route
-router.get("/myreviews", (req, res) => {
-  // If the user is already logged in, redirect to the homepage
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
+router.get("/my-reviews", auth.withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+    let reviewData = await userData.getReviews({
+      order: [["date_created", "DESC"]],
+    });
+    let reviews = reviewData.map((review) => review.get({ plain: true }));
+    reviews.map((review) => {
+      review.date_created = moment(review.date_created).format(
+        "MM/DD/YYYY h:mm:ss"
+      );
+      return review;
+    });
+    res.render("myreviews", { reviews });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("request failed");
   }
-  // Otherwise, render the 'login' template
-  res.render("myreviews");
 });
-
 
 module.exports = router;

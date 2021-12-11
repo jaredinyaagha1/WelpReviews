@@ -1,0 +1,16 @@
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>My Reviews</h3>
+    {{#each reviews as |review|}}
+      <div class="card">
+        <div class="card-header">
+          {{review.date_created}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{review.title}}</h5>
+          <p class="card-text">{{review.description}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
