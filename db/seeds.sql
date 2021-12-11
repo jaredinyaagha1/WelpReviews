@@ -7,8 +7,8 @@ INSERT INTO browseCards (bookName, summaryText, filePath)
 
 
 INSERT INTO bookReviews (username, bookName, reviewText)
- VALUES ("ironVerdant", "", "great book great book great book great book"),
-        ("finallyTransom", "", "great book great book great book great book"),
-        ("improbableNecklace", "", "great book great book great book great book"),
-        ("bozoHum", "", "great book great book great book great book"),
-        ("boomKneel", "", "great book great book great book great book"),
+ VALUES ("ironVerdant", "Queenie", "great book great book great book great book"),
+        ("finallyTransom", "The Martian", "great book great book great book great book"),
+        ("improbableNecklace", "The Toynbee Convector", "great book great book great book great book"),
+        ("bozoHum", "The Remainder", "great book great book great book great book"),
+        ("boomKneel", "Females", "great book great book great book great book");
