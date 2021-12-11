@@ -3,18 +3,18 @@ CREATE DATABASE welp_db;
 
 USE welp_db;
 
-CREATE TABLE browseCards (
+CREATE TABLE `browseCards` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    bookName TEXT NOT NULL,
+    bookName VARCHAR(100) NOT NULL,
     summaryText TEXT NOT NULL,
-    filePath TEXT NOT NULL,
+    filePath TEXT NOT NULL
 );
 
-CREATE TABLE bookReviews (
+CREATE TABLE `bookReviews` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    bookName TEXT NOT NULL,
-    summaryText TEXT NOT NULL,
-    filePath TEXT NOT NULL,
+    seed_id INT,
+    username VARCHAR(25) NOT NULL,
+    reviewText TEXT NOT NULL,
     FOREIGN KEY (seed_id),
     REFERENCES browseCards(id)
     ON DELETE SET NULL
