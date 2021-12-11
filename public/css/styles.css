@@ -61,6 +61,14 @@ form,
   width: 300px;
 }
 
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+  width: 120px;
+}
+
 .user-icon {
   margin-left: 15px;
   color: white;
@@ -568,6 +576,75 @@ font-size: 25px;
   box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
   margin: 5px;
 }
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* REVIEW CARDS */
+
+.new-review-card-container {
+  background-color: white;
+  margin: 85px;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 2000px;
+}
+
+.new-review-card {
+  background-color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  width: max-content;
+  box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+  0 0  0 2px rgb(255,255,255),
+  0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+.new-review-card .new-review-card-header {
+  padding: 0.375rem;
+  background-color: #282a317a;
+  color: #d9e9e8;
+}
+
+.new-review-card h5 {
+margin: 5px;
+display: flex;
+justify-content: center;
+align-content: center;
+text-align: center;
+font-size: 25px;
+}
+
+.new-review-card .new-review-card-body {
+  padding: 0.375rem;
+}
+
+.new-review-card .new-review-card-footer {
+  border-top: 1px solid #3d3d3d;
+  padding: 0.375rem;
+}
+
+.new-review-card.new-review-card-rounded {
+  border-radius: 0.3rem;
+}
+
+.new-review-card.new-review-card-rounded .new-review-card-header {
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.new-review-card img {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  height: 300px;
+  width: 200px;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
+  border:rgb(0, 0, 0) 2px;
+}
+
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* FORMS */
