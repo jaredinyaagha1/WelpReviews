@@ -6,9 +6,9 @@ INSERT INTO browseCards (bookName, summaryText, filePath)
         ("Females", "great book great book great book great book", "public\images\females.jpg");
 
 
-INSERT INTO bookReviews (username, bookName, reviewText)
- VALUES ("ironVerdant", "Queenie", "great book great book great book great book"),
-        ("finallyTransom", "The Martian", "great book great book great book great book"),
-        ("improbableNecklace", "The Toynbee Convector", "great book great book great book great book"),
-        ("bozoHum", "The Remainder", "great book great book great book great book"),
-        ("boomKneel", "Females", "great book great book great book great book");
+INSERT INTO bookReviews (seed_id, username, reviewText)
+ VALUES (1, "ironVerdant", "great book great book great book great book"),
+        (2, "finallyTransom", "great book great book great book great book"),
+        (3, "improbableNecklace", "great book great book great book great book"),
+        (4, "bozoHum", "great book great book great book great book"),
+        (5, "boomKneel", "great book great book great book great book");
