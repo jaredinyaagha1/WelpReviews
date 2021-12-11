@@ -30,4 +30,4 @@ connection.query(seedQuery, [hash], err => {
 
     console.log("SQL seed completed! Password for initial admin account: " + psw)
     connection.end()
-})
+}) 

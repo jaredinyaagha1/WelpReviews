@@ -11,23 +11,18 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    },
-    recommended: {
-      type: DataTypes.BOOLEAN,
-    },
-    recommended_for: {
-      type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,
