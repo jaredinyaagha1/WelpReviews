@@ -3,7 +3,6 @@ const apiRoutes = require("./api");
 const { User } = require("../models");
 const auth = require("../utils/auth");
 const searchRoutes = require("./searchRoutes");
-const moment = require("moment");
 
 router.use("/search", searchRoutes);
 router.use("/api", apiRoutes);
@@ -105,88 +104,27 @@ router.get("/want-to-read", auth.withAuth, async (req, res) => {
   }
 });
 
-router.get("/my-reviews", auth.withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-    });
-    let reviewData = await userData.getReviews({
-      order: [["date_created", "DESC"]],
-    });
-    let reviews = reviewData.map((review) => review.get({ plain: true }));
-    reviews.map((review) => {
-      review.date_created = moment(review.date_created).format(
-        "MM/DD/YYYY h:mm:ss"
-      );
-      return review;
-    });
-    res.render("myreviews", { reviews });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json("request failed");
+// Browse route
+router.get("/browse", (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
   }
+  // Otherwise, render the 'login' template
+  res.render("browse");
 });
 
-// Get all dishes
-router.get("/", (req, res) => {
-  res.render("home");
+// My Reviews route
+router.get("/myreviews", (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render("myreviews");
 });
 
-// TODO: Add a route called `/dish/:num` below
-router.get("/books/title", (req, res) => {
-  return res.render("books", { dishes });
-});
-
-// // Login route
-// router.get('/home', (req, res) => {
-//   // If the user is already logged in, redirect to the homepage
-//   if (req.session.loggedIn) {
-//     res.redirect('/home');
-//     return;
-//   }
-
-//   res.render('home', { books: [
-//     {
-//       title: "The Martian",
-//       author: "The Martian",
-//       description: "The Martian",
-//       rating: "The Martian",
-//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-//     },
-//     {
-//       title: "The Martian",
-//       author: "The Martian",
-//       description: "The Martian",
-//       rating: "The Martian",
-//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-//     }
-//   ]});
-// });
-
-// // Login route
-// router.get('/home', (req, res) => {
-//   // If the user is already logged in, redirect to the homepage
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-
-//   res.render('home', { books: [
-//     {
-//       title: "The Martian",
-//       author: "The Martian",
-//       description: "The Martian",
-//       rating: "The Martian",
-//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-//     },
-//     {
-//       title: "The Martian",
-//       author: "The Martian",
-//       description: "The Martian",
-//       rating: "The Martian",
-//       image: "http://books.google.com/books/content?id=OPAgEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-//     }
-//   ]});
-// });
 
 module.exports = router;
