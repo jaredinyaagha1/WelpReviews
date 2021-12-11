@@ -1,10 +1,10 @@
 
-<div class="col">
-        <div class="profile-card mb-4 rounded-3 shadow-sm border-primary">
+<div class="col-11" style="margin-left: -100px;">
+        <div class="profile-card">
           {{!-- Profile Banner --}}
           <div class="profile-banner">
             <div class="user-profile-pic"></div>
-            <a class="edit-profile" style="font-weight: bold;"> Edit Profile</a>
+            <a class="edit-profile" style="font-size: 15px;"> Edit Profile</a>
           </div>
           <div class="card-header py-3 text-white bg-primary border-primary">
             <h4 class="my-0 fw-normal">User Name</h4>
@@ -17,32 +17,36 @@
               <li><a href="/want-to-read">Books I Want to Read</a></li>
             </ul>
             <a href="/my-reviews" class="w-100 btn btn-lg btn-primary">My Reviews</a>
+
+            <div class="col-auto">
+                <h2>Welcome, {{email}}!</h2>
+              
+            <h1>My Latest Reviews</h1>
+              <div class="row mb-2">
+                <div class="col-md-6">
+                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex position-static">
+                      <strong class="d-inline-block mb-2 text-primary">World</strong>
+                      <h3 class="mb-0"></h3>
+                      <div class="mb-1 text-muted">Nov 12</div>
+                      <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                      <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
           </div>
         </div>
       </div>
 
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{email}}!</h2>
-  </div>
-</div>
 
-<h1>My Latest Reviews</h1>
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0"></h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
-        </div>
-      </div>
-    </div>
+
 
 <script src="./js/profile.js"></script>
