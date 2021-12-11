@@ -113,13 +113,68 @@ form, .nav-search {
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* MY REVIEWS */
 
-.form-group {
+.review-heading h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 10px;
+
+}
+
+.review-project-form {
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     flex-direction: column;
-    border:tomato solid 6px;
+    background-color: white;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+    0 0  0 2px rgb(255,255,255),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);
+    width: 800px;
+    height: fit-content;
+    font-weight: 500;
+    font-size: 20px;
 }
+
+.review-card-container h3{
+    color: red;
+    
+}
+
+.username-input {
+    width: 750px;
+    height: 30px;
+}
+
+.title-input {
+    width: 750px;
+    height: 30px;
+}
+
+.review-group {
+    margin-left: 20px;
+    align-content: center;
+    
+    width: 800px;
+}
+
+.review-input {
+    
+    width: 750px;
+    height: 250px;
+}
+
+.review-btn {
+    box-shadow: 10px 5px 5px rgba(15, 15, 15, 0.438);
+    margin: 5px;
+    height: 35px;
+    width: 250px;
+    border-radius: 5px;
+    padding: 4px;
+
+}
+
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* PROFILE */
@@ -139,10 +194,27 @@ form, .nav-search {
     border-radius: 50%;
 }
 
+.profile-card {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+
 
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* HOME */
+
+.home-container {
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-content: center;
+    align-content: center;
+    max-width: 60%;
+}
 
 .home-banner {
     background-position: center;
@@ -161,6 +233,10 @@ form, .nav-search {
     color: wheat;
 }
 
+.p-2 {
+    margin-top: 25px;
+}
+
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* BROWSE */
@@ -170,6 +246,43 @@ form, .nav-search {
     background-size: cover;
 }
 
+.browse-container {
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-content: center;
+    align-content: center;
+    max-width: 60%;
+}
+
+.browse-banner {
+    background-position: center;
+    background-size: cover;
+    border: solid red 3px;
+}
+
+.text-box {
+    background-color: rgba(32, 32, 32, 0.685);
+}
+
+.source {
+    color: wheat;
+}
+.source a {
+    color: wheat;
+}
+
+.p-2 {
+    margin-top: 25px;
+}
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* API CONTENT */
+
+
+
+
+
+
+
+
 

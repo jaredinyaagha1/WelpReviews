@@ -104,24 +104,41 @@ router.get("/want-to-read", auth.withAuth, async (req, res) => {
   }
 });
 
-
-
-
-
-// Get all dishes
-router.get('/', (req, res) => {
-  res.render('home');
+// Browse route
+router.get("/browse", (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render("browse");
 });
 
-// TODO: Add a route called `/dish/:num` below
-router.get('/books/title', (req, res) => {
-  return res.render('books', {dishes});
+// My Reviews route
+router.get("/myreviews", (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render("myreviews");
 });
 
 
 
 
 
+// // Get all dishes
+// router.get('/', (req, res) => {
+//   res.render('home');
+// });
+
+// // TODO: Add a route called `/dish/:num` below
+// router.get('/books/title', (req, res) => {
+//   return res.render('books', {dishes});
+// });
 
 // // Login route
 // router.get('/home', (req, res) => {

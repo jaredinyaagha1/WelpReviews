@@ -1,9 +1,9 @@
   {{#if results.length}}
   <div class="card-container">
-    <div class="col-md-6">
+    <div class="card-row">
       <h3>Search Results:</h3>
 
-    <div class="card-deck">
+    <div class="card-deck row">
       {{#each results as |result|}}
       <div class="card" style="width: 25rem;">
         <img class="card-img-top" src="{{result.volumeInfo.imageLinks.thumbnail}}" alt="Card image cap">
