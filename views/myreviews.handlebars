@@ -1,44 +1,16 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="username-section"> Username</label>
-        <input
-          class="form-input"
-          type="text"
-          id="project-name"
-          name="project-name"
-        />
+    <h3>My Reviews</h3>
+    {{#each reviews as |review|}}
+      <div class="card">
+        <div class="card-header">
+          {{review.date_created}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{review.title}}</h5>
+          <p class="card-text">{{review.description}}</p>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="book-title-section"> Book Title:</label>
-        <input
-          class="form-input"
-          type="number"
-          id="project-funding"
-          name="project-funding"
-        />
-      </div>
-      <div class="form-group">
-        <label for="review-section"> Review:</label>
-        <textarea
-          class="form-input"
-          id="project-desc"
-          name="project-desc"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+    {{/each}}
   </div>
-
 </div>
